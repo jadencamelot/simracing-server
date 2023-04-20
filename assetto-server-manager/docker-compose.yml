@@ -5,7 +5,8 @@ services:
     image: seejy/assetto-server-manager:latest
     ports:
     # the port that the server manager runs on
-    - "8772:8772"
+    #- "8772:8772"
+    - "443:443"
     # the port that the assetto server runs on (may vary depending on your configuration inside server manager)
     - "9600:9600"
     - "9600:9600/udp"
@@ -19,3 +20,6 @@ services:
     
     # volume mount the config
     - ./config.yml:/home/assetto/server-manager/config.yml
+
+    # volume mount the let's encrypt TLS certificate
+    - /etc/letsencrypt:/etc/letsencrypt

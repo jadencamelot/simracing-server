@@ -32,8 +32,8 @@ steam:
   # however, if you do not wish to provide server manager with this information,
   # leave it blank and install assetto corsa server to the path you specified in
   # install_path (default: 'assetto')
-  username: foobar
-  password: hunter2
+  username:
+  password:
 
   # where to install assetto corsa server
   install_path: assetto
@@ -53,7 +53,7 @@ http:
   # hostname is the hostname the HTTP server should listen on.
   # change '0.0.0.0' to 'localhost' if you don't want server manager to be
   # available on the web.
-  hostname: 0.0.0.0:8772
+  hostname: 0.0.0.0:443
 
   # session key is used to encrypt the http session
   session_key: RANDOMLY_GENERATE_THIS
@@ -79,11 +79,11 @@ http:
     # TLS configuration. Server Manager supports TLS v1.2 upwards. As of 12/03/2020,
     # the Server Manager configuration yields a perfect score from SSL Labs.
     # If you enable this, you likely want the hostname (above) to listen on port 443.
-    enabled: false
+    enabled: true
     # the path to the SSL certificate file.
-    cert_path: ""
+    cert_path: "/etc/letsencrypt/live/$SERVER_DOMAIN/fullchain.pem"
     # the path to the SSL key file.
-    key_path: ""
+    key_path: "/etc/letsencrypt/live/$SERVER_DOMAIN/privkey.pem"
 
 ################################################################################
 #
